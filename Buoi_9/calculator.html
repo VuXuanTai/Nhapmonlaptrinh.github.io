@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <input type="number" id="n1">
+      <input type="number" id="n2">
+      <span><button onclick="cong()"> + </button></span>
+      <span><button onclick="tru()"> - </button></span>
+      <span><button onclick="nhan()"> * </button></span>
+      <span><button onclick="chia()"> / </button></span>
+      <p id="result"></p>
+      <script>
+            function cong(){
+                  let num1 = +document.getElementById("n1").value;
+                  let num2 = +document.getElementById("n2").value;
+                  let sum = (num1 + num2);
+
+                  document.getElementById('result').innerHTML = "Đây là kết quả: " + sum;
+            }
+            function tru(){
+                  let num1 = +document.getElementById("n1").value;
+                  let num2 = +document.getElementById("n2").value;
+                  let sub = (num1 - num2);
+
+                  document.getElementById('result').innerHTML = "Đây là kết quả: " + sub;
+            }
+            function nhan(){
+                  let num1 = +document.getElementById("n1").value;
+                  let num2 = +document.getElementById("n2").value;
+                  let mul = (num1 * num2);
+
+                  document.getElementById('result').innerHTML = "Đây là kết quả: " + mul;
+            }
+            function chia(){
+                  let num1 = +document.getElementById("n1").value;
+                  let num2 = +document.getElementById("n2").value;
+                  let divi = (num1 / num2);
+
+                  document.getElementById('result').innerHTML = "Đây là kết quả: " + divi;
+            }
+      </script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 function tonghaiso(){
+      
       let a = prompt('nhập số nguyên a: ');
       let b = prompt('nhập số nguyên b: ');
       a = parseInt(a);

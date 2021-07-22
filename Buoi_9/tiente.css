@@ -1,0 +1,13 @@
+.container{
+      width: 400px;
+}
+#input{
+      float: left;
+      text-align: center;
+      width: 200px;
+}
+#right1{
+      float: left;
+      text-align: center;
+      width: 200px;
+}

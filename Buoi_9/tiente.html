@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <table>
+            <tr>
+                  <td>Amount</td>
+                  <td>Form currency</td>
+                  <td>To currency</td>
+            </tr>
+            <tr>
+                  <td><input type="giatri" id="text" ></td>
+                  <td><select onchange="value1 = parseInt(this.value)">
+                        <option value="23000">VND</option>
+                        <option value="1" selected="selected">USD</option>
+                  </select></td>
+                  <td><select onchange="value2 = parseInt(this.value)">
+                        <option value="23000" selected="selected">VND</option>
+                        <option value="1">USD</option>
+                  </select></td>
+                  <td><button onclick="chuyendoi()"><b>Convert</b></button></td>
+            </tr>
+      </table>
+      <script>
+      //      function change(){
+      //       let value1 = parseInt(this.value);
+      //       let value2 = parseInt(this.value);
+      //      }
+            function chuyendoi(){
+                  let giatri = +document.getElementById("text");
+                  let ketqua = ((giatri*(value2))/value1);
+                  alert(ketqua);
+            }
+      </script>
+</body>
+</html>
