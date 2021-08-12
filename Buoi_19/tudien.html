@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Từ điển</title>
+</head>
+<body>
+      <input type="text" id="nhap">
+      <span><button id="dich" onclick="dich()">Dịch</button></span>
+      <p id="result"></p>
+      <script>
+            function dich(){
+                  let eng = ["apple","telephone","computer","developer"]
+                  let vng = ["táo","điện thoại","máy tính","lập trình viên"]
+                  let nhap = document.getElementById("nhap").value;
+                  for(let i = 0; i < eng.length; i++){
+                        if(nhap == eng[i]){
+                              let ind = i;
+                              document.getElementById("result").innerHTML = "Nghĩa: " + vng[ind];
+                        }
+                  }
+                  for(let j = 0; j < vng.length; j++){
+                        if(nhap == vng[j]){
+                              let ind = j;
+                              document.getElementById("result").innerHTML = "Nghĩa: " + eng[ind];
+                        }
+                  }
+            }
+      </script>
+</body>
+</html>

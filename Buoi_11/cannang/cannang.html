@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Tính chỉ số cân nặng</title>
+</head>
+<style>
+      body{
+            background-color: bisque;
+      }
+      #back{
+            display: flex;
+      }
+      #giaodien{
+            border: 1px solid;
+            width: fit-content;
+            height: fit-content;
+            margin: auto;
+      }
+</style>
+<script src="./cannang.js"></script>
+<body>
+      <div id="back">
+            <div id="giaodien">
+                  <table>
+                        <tr>
+                              <td><b>Tính chiều cao cân nặng</b></td>
+                        </tr>
+                        <tr>
+                              <td>Nhập chiều cao:</td>
+                              <td><input type="text" id="weight"></td>
+                        </tr>
+                        <tr>
+                              <td>Nhập cân nặng:</td>
+                              <td><input type="text" id="height"></td>
+                        </tr>
+                        <tr>
+                             <td><button onclick="check()">Check!</button></td> 
+                        </tr>
+                  </table>
+                  <p id="result"></p>
+            </div>
+      </div>
+</body>
+</html>

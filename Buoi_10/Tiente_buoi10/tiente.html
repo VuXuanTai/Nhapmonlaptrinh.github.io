@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+    <script src="tiente.js"></script>
+</head>
+<style>
+    body{
+        background-color: aquamarine;
+    }
+    #giaodien{
+        display: flex;
+        background-color: aquamarine;
+    }
+    .center{
+        border: 1px solid;
+        width: fit-content;
+        height: fit-content;
+        background-color: antiquewhite;
+        margin: auto;
+    }
+    button{
+        background-color: #FFB6C1;
+    }
+</style>
+<body>
+    <div id="giaodien">
+        <div class="center">
+            <table>
+                <tr>
+                    <th><b>Amount</b></th>
+                    <th><b>From Currency</b></th>
+                    <th><b>To Currency</b></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="Amount"></td>
+                    <td>
+                        <select id="From">
+                            <option value="VND">VND</option>
+                            <option value="USD">USD</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="To">
+                            <option value="VND">VND</option>
+                            <option  value="USD">USD</option>
+                        </select>
+                    </td>
+                    <td><button onclick="ChangeMoney()"><b>Convert</b></button></td>
+                </tr>    
+            </table>
+            <br>
+            <p id="Result"></p>
+        </div>
+    </div>
+    
+</body>
+</html>
+

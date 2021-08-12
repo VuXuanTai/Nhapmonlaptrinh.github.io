@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Kiểm tra số chẵn</title>
+</head>
+<style>
+      body{
+            background-color: bisque;
+      }
+      #back{
+            display: flex;
+      }
+      #giaodien{
+            border: 1px solid;
+            width: fit-content;
+            height: fit-content;
+            text-align: center;
+            margin: auto;
+      }
+</style>
+<script src="./kiemtraso.js"></script>
+<body>
+      <div id="back">
+            <div id="giaodien">
+                  <p><b>Nhập số:</b></p>
+                  <span><input type="text" id="nhapso"></span>
+                  <span><button onclick="check()">Check!</button></span>
+                  <br>
+                  <p id="check1"></p>
+            </div>
+      </div>
+</body>
+</html>

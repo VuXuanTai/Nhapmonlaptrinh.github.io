@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <input type="text" id="hoaqua">
+      <span><button onclick="kiemtra()">Xem Giá</button></span>
+      <p id="result"></p>
+      <script>
+            function kiemtra(){
+                  let hoaqua = document.getElementById("hoaqua").value;
+                  let price;
+                  switch(hoaqua){
+                        case "Ổi": 
+                              price = 20000;
+                              break;
+                        case "Dưa Hấu": 
+                              price = 20000;
+                              break;
+                        case "Táo":
+                              price: 30000;
+                              break;
+                        case "Xoài": 
+                              price: 40000;
+                              break;
+                        case "Cam": 
+                              price = 40000;
+                              break;
+                        case "Chôm Chôm": 
+                              price = 40000;
+                              break;
+                        case "Măng cụt": 
+                              price = 50000;
+                              break;
+                  }
+                  document.getElementById("result").innerHTML = "Giá: " + price + "VNĐ/kg"
+            }
+
+      </script>
+</body>
+</html>

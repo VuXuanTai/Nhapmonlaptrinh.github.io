@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            let num = prompt("nhập số: ");
+            let n = 2;
+            let count = 0;
+            let dem;
+                  for(i = 1; i <= 1000; i++){
+                        if(count < num ){
+                              for(let j = 1; j <= i; j++){
+                                    if(i % j == 0){
+                                          dem += 1;
+                                    }
+                              }
+                              if(dem < 3){
+                                    document.write(i + "<br>");
+                                    count+=1
+                              }
+                              dem = 0
+                              }
+                              else{
+                                    break;
+                        }
+                  }
+      </script>
+</body>
+</html>

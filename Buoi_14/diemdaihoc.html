@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <table style="text-align: center;">
+            <tr>
+                  <td>Môn Toán </td>
+                  <td><input type="text" id="toan"></td>
+            </tr>
+            <tr>
+                  <td>Môn Văn </td>
+                  <td><input type="text" id="van"></td>
+            </tr>
+            <tr>
+                  <td>Môn Anh </td>
+                  <td><input type="text" id="anh"></td>
+            </tr>
+            <tr>
+                  <td>Khu vực</td>
+                  <td><select id="sec1" >
+                        <option value="0.75" selected="selected">KV1</option>
+                        <option value="0.25">KV2</option>
+                        <option value="0.5">KV2-NT</option>
+                        <option value="0">KV3</option>
+                  </select></td>
+            </tr>
+            <tr>
+                  <td><button onclick="kiemtra()">Kiểm Tra</button></td>
+                  <td><p id="result"></p></td>
+            </tr>
+      </table>
+      <script>
+            function kiemtra(){
+                  let dToan = +document.getElementById("toan").value;
+                  let dVan = +document.getElementById("van").value;
+                  let dAnh = +document.getElementById("anh").value;
+                  let diemcong = +document.getElementById("sec1").value;
+                  let ketqua = dToan + dVan + dAnh + diemcong;
+                  document.getElementById("result").innerHTML = ketqua;
+            }
+      </script>
+</body>
+</html>

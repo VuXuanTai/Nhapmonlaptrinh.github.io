@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <input type="text" id="nhap">
+      <span><button id="them" onclick="them()">Add</button></span>
+      <span><button id="hienthi" onclick="hienthi()">Display</button></span>
+      <span><button id="daonguoc" onclick="dao()">Đảo</button></span>
+      <span><button id="timmax" onclick="max()">max</button></span>
+      <span><button id="checkso" onclick="check()">check</button></span>
+      <script>
+            let arr = [9,8,7]
+            function them(){
+                  let nhap = document.getElementById("nhap").value;
+                  arr.push(nhap)
+                  console.log(nhap);
+            }
+            function hienthi(){
+                  for(let i = 0; i < arr.length ; i++){
+                        document.write("phần tử " + i +": " + arr[i] + "<br>");
+                  }
+            }
+            function dao(){
+                  for(let i = arr.length - 1 ; i >=0  ; i--){
+                        document.write("phần tử " + i +": " + arr[i] + "<br>");
+                  }
+            }
+            function max(){
+                  let vitri = 0;
+                  let max = arr[0];
+                  for(let i = 0; i < arr.length; i++){
+                        if(arr[i] > max){
+                              max = arr[i];
+                              vitri = i;
+                        }
+                  }
+                  document.write("phần tử lớn nhất là: " + max + " tại vị trí " + vitri);
+            }
+            function check(){
+                  let nhap = document.getElementById("nhap").value;
+                  for(let i = 0; i < arr.length; i++){
+                        if(nhap == arr[i]){
+                              alert("Đã tồn tại");
+                              break;
+                        }
+                        else {
+                              alert("Chưa tồn tại");
+                              break;
+                        }
+                  }
+            }
+      </script>
+</body>
+</html>
