@@ -7,13 +7,15 @@
       <title>Từ điển</title>
 </head>
 <body>
+      <h1>Từ điển</h1>
       <input type="text" id="nhap">
       <span><button id="dich" onclick="dich()">Dịch</button></span>
+      <span><button onclick="themeng()">Thêm ENG</button></span>
       <p id="result"></p>
       <script>
+            let eng = ["apple","telephone","computer","developer"]
+            let vng = ["táo","điện thoại","máy tính","lập trình viên"]
             function dich(){
-                  let eng = ["apple","telephone","computer","developer"]
-                  let vng = ["táo","điện thoại","máy tính","lập trình viên"]
                   let nhap = document.getElementById("nhap").value;
                   for(let i = 0; i < eng.length; i++){
                         if(nhap == eng[i]){
@@ -27,6 +29,11 @@
                               document.getElementById("result").innerHTML = "Nghĩa: " + eng[ind];
                         }
                   }
+            }
+            function themeng(){
+                  let nhap = document.getElementById("nhap").value;
+                  eng.push(nhap)
+                  console.log(eng)
             }
       </script>
 </body>

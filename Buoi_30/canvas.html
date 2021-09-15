@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <button onclick="clearInterval(myCircle)">Stop</button>
+      <canvas id="mycanvas" height="768px" width="1368px" ></canvas>
+      <script>
+            function Circle(x, y, radius){
+                  this.x = x;
+                  this.y = y;
+                  this.radius = radius;
+            }
+            function getRandomHex(){
+                  return Math.floor(Math.random()*255);
+            }
+            function getRandomColor(){
+                  let red = getRandomHex();
+                  let green = getRandomHex();
+                  let blue = getRandomHex();
+                  return "rgb(" + red + "," + green + "," + blue + ")";
+            }
+            function createCircle(){
+                  let ctx = document.getElementById("mycanvas").getContext("2d");
+                  let radius = Math.floor(Math.random()*80);
+                  let color = getRandomColor();
+                  let x = Math.random() * window.innerWidth;
+                  let y = Math.random() * window.innerHeight;
+                  let Circle = new Circle(x,y, radius);
+                  ctx.beginPath();
+                  ctx.arc(Circle.x, Circle.y, Circle.radius, 0, 2* Math.PI);
+                  ctx.shadowColor = "black";
+                  ctx.fillStyle = color;
+                  ctx.fill();
+            }
+            function createMiltipleCircle(){
+                  for(let i = 0; i < 30; i++){
+                        createCircle();
+                  }
+                  clearRect(0, 0, window.innerWidth, window.innerHeight);
+            }
+            let myCircle = setInterval(() => {
+                  createMiltipleCircle();
+            }, 2000);
+            // setTimeout(() => {
+                  
+            // })
+      </script>
+</body>
+</html>

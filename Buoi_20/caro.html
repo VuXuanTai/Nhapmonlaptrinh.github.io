@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <input type="text" id="hang">
+      <span><button onclick="tonghang()">Tổng hàng</button></span>
+      <span><button onclick="tongcot()">Tổng cột</button></span>
+      <br>
+      <script>
+            let arr = [
+            [0,0,0,0,0],
+            [1,2,3,4,5],
+            [9,8,6,4,2],
+            [1,4,7,2,6],
+            [5,2,4,5,3]];
+
+            for(let i = 0; i < arr.length; i++){
+                  for(let j = 0; j < arr.length; j++){
+                        document.write(arr[i][j])
+                  }
+                  document.write("<br>")
+            }
+            function tonghang(){
+                  let hang = +document.getElementById("hang").value;
+                  
+                  for(let i = 0; i < arr.length; i++){
+                        let result = 0;
+                        for(j = 0; j < arr.length; j++){
+                              result = result + arr[hang][j];
+                        }
+                        console.log(result);
+                  }
+            }
+            function tongcot(){
+                  let hang = +document.getElementById("hang").value;
+                  for(let i = 0; i < arr.length; i++){
+                        let result = 0;
+                        for(j = 0; j < arr.length; j++){
+                              result = result + arr[i][hang];
+                        }
+                        console.log(result);
+                  }
+            }
+      </script>
+</body>
+</html>
