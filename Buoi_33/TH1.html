@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <canvas id="canvas" height="500px" width="500px" style="border: 1px solid salmon;"></canvas>
+      <script>
+            class Circle{
+                  constructor(x,y,r){
+                        this.x = x;
+                        this.y = y;
+                        this.r = r;
+                  }
+            }
+            function createCircle(){
+                  let ctx = document.getElementById("canvas").getContext("2d");
+                  let Circle_1 = new Circle(100,100,50);
+                  let Circle_2 = new Circle(100,200,60);
+                  ctx.beginPath();
+                  ctx.arc(Circle_1.x, Circle_1.y, Circle_1.r, 0, 2* Math.PI);
+                  ctx.arc(Circle_2.x, Circle_2.y, Circle_2.r, 0, 2* Math.PI);
+                  ctx.fill();
+            }
+            createCircle();
+      </script>
+</body>
+</html>
