@@ -1,0 +1,26 @@
+table,th,td{
+	border: 1px solid;
+	}
+table{
+	border-collapse: collapse;
+	width: 60%;
+}
+th,td{
+	text-align: left;
+	padding: 10px;
+}
+.main{
+	width: 100%;
+	border: solid 1px blue;
+	padding-left: 15px;
+	}
+.form{
+	width: 100%;
+	border: solid 1px blue;
+	margin: auto;
+	background-color: blue;
+	color: white;
+}
+tbody{
+	margin: 10px;
+}

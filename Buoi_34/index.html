@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quản lý sinh viên</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            body{
+                  font-family: Roboto;
+                  background: #373B44;
+                  background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+                  background: linear-gradient(to right, #4286f4, #373B44);
+            }
+            .tab{float: left;}
+            .tab-1{
+                  border: 1px solid black;
+                  height: fit-content;
+                  width: fit-content;
+                  background-color: #eaedef;
+                  margin-left: 10%;
+                  position:relative;
+                  border-radius: 5px;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                  }
+            .tab-2{
+                  border: 1px solid black;
+                  margin-left: 50px;
+                  padding: 15px;
+                  position:relative;
+                  height:fit-content;
+                  width: fit-content;
+                  top:20px;
+                  background-color: #eaedef;
+                  margin:0 auto;
+                  position:relative;
+                  border-radius: 5px;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .tab-2 input{display: block;margin-bottom: 10px}
+            tr{transition:all .25s ease-in-out}
+            tr:hover{background-color:#EEE;cursor: pointer}
+
+            #table{
+                  border: 1px solid black;
+                  border-collapse: collapse;
+                  padding: 15px;
+            }
+            
+            th,td{
+                  padding: 10px;
+                  border: 1px solid black;
+            }
+        </style>
+        
+    </head>
+    <body>
+        
+      <div class="container">
+            <div class="tab tab-2" >
+                  <p style="text-align: center; font-size:x-large;"><b>Quản lý sinh viên</b></p>
+                  Họ tên :<input type="text" name="fname" id="fname">
+                  Lớp :<input type="text" name="sclass" id="sclass">
+                  Giới tính :&nbsp;&nbsp;<select id="sex">
+                                          <option value="Nam">Nam</option>
+                                          <option value="Nữ">Nữ</option>
+                                          </select><br>
+                  Ngày sinh :<input type="date" name="date" id="date">
+                  Quê quán :<input type="text" name="country" id="country">
+                  
+                  <button onclick="addHtmlTableRow();">Add</button>
+                  <button onclick="editHtmlTbleSelectedRow();">Edit</button>
+                  <button onclick="removeSelectedRow();">Remove</button>
+                  <button onclick="isEmpty()">Clear input field</button>
+            </div>
+            <br>
+            <div class="tab tab-1">
+                <table id="table">
+                    <tr>
+                        <th>Họ tên</th>
+                        <th>Lớp</th>
+                        <th>Giới tính</th>
+                        <th>Ngày sinh</th>
+                        <th>Quê quán</th>
+                    </tr>
+                </table>
+            </div>
+      </div>
+            
+        
+        <script>
+            
+            let rIndex,
+                table = document.getElementById("table");
+            
+            //Kiểm tra xem trống không
+            function checkEmptyInput()
+            {
+                let isEmpty = false,
+                    fname = document.getElementById("fname").value,
+                    sclass = document.getElementById("sclass").value,
+                    sex = document.getElementById("sex").value,
+                    date = document.getElementById("date").value,
+                    country = document.getElementById("country").value;
+            
+                if(fname === ""){
+                    alert("Họ tên không được trống");
+                    isEmpty = true;
+                }
+                else if(sclass === ""){
+                    alert("Lớp không được trống");
+                    isEmpty = true;
+                }
+                else if(sex === ""){
+                    alert("Giới tính không được trống");
+                    isEmpty = true;
+                }
+                else if(date === ""){
+                    alert("Ngày sinh không được trống");
+                    isEmpty = true;
+                }
+                else if(country === ""){
+                    alert("Quê quán không được trống");
+                    isEmpty = true;
+                }
+                return isEmpty;
+            }
+            
+            // thêm hàng
+            function addHtmlTableRow()
+            {
+                if(!checkEmptyInput()){
+                let newRow = table.insertRow(table.length),
+                  cell1 = newRow.insertCell(0),
+                  cell2 = newRow.insertCell(1),
+                  cell3 = newRow.insertCell(2),
+                  cell4 = newRow.insertCell(3),
+                  cell5 = newRow.insertCell(4),
+                  fname = document.getElementById("fname").value,
+                  sclass = document.getElementById("sclass").value,
+                  sex = document.getElementById("sex").value,
+                  date = document.getElementById("date").value,
+                  country = document.getElementById("country").value;
+            
+                  cell1.innerHTML = fname;
+                  cell2.innerHTML = sclass;
+                  cell3.innerHTML = sex;
+                  cell4.innerHTML = date;
+                  cell5.innerHTML = country;
+                  // gọi hàm thêm sự kiện cho hàng mới
+                  selectedRowToInput();
+                  }
+                  clearInput();
+            }
+            
+            function selectedRowToInput()
+            {
+                
+                for(let i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                      // get the seected row index
+                      rIndex = this.rowIndex;
+                      document.getElementById("fname").value = this.cells[0].innerHTML;
+                      document.getElementById("sclass").value = this.cells[1].innerHTML;
+                      document.getElementById("sex").value = this.cells[2].innerHTML;
+                      document.getElementById("date").value = this.cells[3].innerHTML;
+                      document.getElementById("country").value = this.cells[4].innerHTML;
+
+                    };
+                }
+            }
+            selectedRowToInput();
+            
+            function editHtmlTbleSelectedRow()
+            {
+                let fname = document.getElementById("fname").value,
+                    sclass = document.getElementById("sclass").value,
+                    sex = document.getElementById("sex").value,
+                    date = document.getElementById("date").value,
+                    country = document.getElementById("country").value;
+               if(!checkEmptyInput()){
+                table.rows[rIndex].cells[0].innerHTML = fname;
+                table.rows[rIndex].cells[1].innerHTML = sclass;
+                table.rows[rIndex].cells[2].innerHTML = sex;
+                table.rows[rIndex].cells[3].innerHTML = date;
+                table.rows[rIndex].cells[4].innerHTML = country;
+              }
+            }
+            
+            function removeSelectedRow()
+            {
+                table.deleteRow(rIndex);
+                // xóa dữ liệu nhập
+                document.getElementById("fname").value = "";
+                document.getElementById("sclass").value = "";
+                document.getElementById("sex").value = "";
+                document.getElementById("date").value = "";
+                document.getElementById("country").value = "";
+            }
+            function isEmpty(){
+                document.getElementById('fname').value = '';
+                document.getElementById("sclass").value = "";
+                document.getElementById("sex").value = "";
+                document.getElementById("date").value = "";
+                document.getElementById("country").value = "";
+            }
+        </script>
+        
+    </body>
+</html>
